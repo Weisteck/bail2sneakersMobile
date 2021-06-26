@@ -23,19 +23,19 @@
 
 import React from 'react';
 import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator} from "@react-navigation/stack";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeScreen from "./src/container/screens/home";
-import DetailsScreen from "./src/container/screens/details";
+import OrdersStackScreen from "./src/navigation/orderNavigation";
 
-const Stack = createStackNavigator();
+const Tap = createBottomTabNavigator();
 
 function App() {
   return(
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name='Home' component={ HomeScreen } />
-        <Stack.Screen name='Details' component={ DetailsScreen } />
-      </Stack.Navigator>
+      <Tap.Navigator>
+        <Tap.Screen name='Home' component={ HomeScreen } />
+        <Tap.Screen name='Details' component={ OrdersStackScreen } />
+      </Tap.Navigator>
     </NavigationContainer>
   )
 };
