@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text, Button} from 'react-native';
 import styles from './style';
+import {Icon} from "react-native-elements";
 
 const HomeScreen = ({ navigation }) => {
   return (
@@ -12,8 +13,9 @@ const HomeScreen = ({ navigation }) => {
       />
       <Button
         title='Open Drawer'
-        onPress={() => navigation.openDrawer()}
+        onPress={() => navigation.toggleDrawer()}
       />
+      <Icon name='home' />
     </View>
   );
 }

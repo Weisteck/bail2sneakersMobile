@@ -8,9 +8,28 @@ const OrderStack = createStackNavigator();
 
 const OrdersStackScreen = () => {
   return (
-    <OrderStack.Navigator>
-      <OrderStack.Screen name='Orders' component={OrdersScreen} />
-      <OrderStack.Screen name='OrderDetail' component={OrderDetailScreen} />
+    <OrderStack.Navigator
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: '#4B3838'
+        },
+        headerTintColor: '#E2E4E9',
+        headerTitleStyle: {
+          fontWeight: "bold",
+          fontSize: 20
+        },
+      }}
+    >
+      <OrderStack.Screen
+        name='Orders'
+        component={OrdersScreen}
+        options={{ title: 'Commandes' }}
+      />
+      <OrderStack.Screen
+        name='OrderDetail'
+        component={OrderDetailScreen}
+        options={{ title: 'Detail de la commande'}}
+      />
     </OrderStack.Navigator>
   );
 }
