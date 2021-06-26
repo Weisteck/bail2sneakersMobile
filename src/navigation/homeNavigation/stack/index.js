@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './style';
 import { createStackNavigator } from "@react-navigation/stack";
-import HomeScreen from "../../container/screens/home";
+import HomeScreen from "../../../container/screens/home";
 
 const HomeStack = createStackNavigator();
 
