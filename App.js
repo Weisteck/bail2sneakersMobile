@@ -1,22 +1,38 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import HomeStackDrawerScreen from "./src/navigation/homeNavigation/main";
+import OrdersStackScreen from "./src/navigation/orderNavigation";
+import {Icon} from "react-native-elements";
 
-export default function App() {
+const Tap = createBottomTabNavigator();
+
+const test = () => {
   return (
-    <View style={styles.container}>
-      <Text>Projet Bail2Sneakers 👟</Text>
-      <Text>Partie Mobile ! </Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    <Icon name='home' />
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+function App() {
+  return(
+    <NavigationContainer>
+      <Tap.Navigator
+        screenOptions={({route}) => ({
+            tabBarIcon: () => {
+              let nameIcon;
+              if(route.name === 'Home') nameIcon='home'
+              else if (route.name === 'Commande') nameIcon='shopping-bag'
+              return <Icon name={ nameIcon } />
+            }
+          }
+        )
+        }
+      >
+        <Tap.Screen name='Home' component={ HomeStackDrawerScreen } />
+        <Tap.Screen name='Commande' component={ OrdersStackScreen } />
+      </Tap.Navigator>
+    </NavigationContainer>
+  )
+};
+
+export default App;
