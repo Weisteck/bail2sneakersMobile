@@ -21,7 +21,7 @@ function App() {
             tabBarIcon: () => {
               let nameIcon;
               if(route.name === 'Home') nameIcon='home'
-              else if (route.name === 'Details') nameIcon='shopping-bag'
+              else if (route.name === 'Commande') nameIcon='shopping-bag'
               return <Icon name={ nameIcon } />
             }
           }
@@ -29,7 +29,7 @@ function App() {
         }
       >
         <Tap.Screen name='Home' component={ HomeStackDrawerScreen } />
-        <Tap.Screen name='Details' component={ OrdersStackScreen } />
+        <Tap.Screen name='Commande' component={ OrdersStackScreen } />
       </Tap.Navigator>
     </NavigationContainer>
   )

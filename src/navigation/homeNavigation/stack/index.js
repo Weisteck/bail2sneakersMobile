@@ -2,8 +2,6 @@ import React from 'react';
 import styles from './style';
 import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from "../../../container/screens/home";
-import OrdersScreen from "../../../container/screens/orders";
-import TitleComponent from "../../../container/components/topBar";
 
 const HomeStack = createStackNavigator();
 
@@ -25,7 +23,7 @@ const HomeStackScreen = () => {
         name='Home'
         component={HomeScreen}
         options={{
-          headerTitle: props => <TitleComponent {...props} />
+          title: 'Bienvenue 🐬'
         }}
       />
     </HomeStack.Navigator>
