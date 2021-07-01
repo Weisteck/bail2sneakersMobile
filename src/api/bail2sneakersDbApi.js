@@ -5,12 +5,12 @@ const api = axios.create({baseURL: config.API_ROOT_URL})
 
 // Order fetch cart by status
 
-const getAllOrders = async () => {
+const getAllOrdersFilteredByOrdered = async () => {
   try {
-    return await api.get(`/api/cart/get-all`)
+    return await api.get(`/api/cart/get-by-status?status=orderedAt`)
   } catch (e) {
     console.error(e)
   }
 }
 
-export default  getAllOrders();
+export default  getAllOrdersFilteredByOrdered();

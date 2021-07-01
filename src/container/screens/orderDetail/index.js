@@ -2,10 +2,11 @@ import React from 'react';
 import {View, Text} from 'react-native';
 import styles from './style';
 
-const OrderDetailScreen = () => {
+const OrderDetailScreen = ({ route, navigation }) => {
+  const { item } = route.params
   return (
     <View style={styles.main}>
-      <Text>Page de detail de la commande !!</Text>
+      <Text>{item._id}</Text>
     </View>
   );
 }
