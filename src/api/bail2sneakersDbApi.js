@@ -1,16 +1,18 @@
 import axios from 'axios'
 import config from '../config/config'
 
-const api = axios.create({baseURL: config.API_ROOT_URL})
+const api = axios.create({ baseURL: config.API_ROOT_URL })
 
 // Order fetch cart by status
 
 const getAllOrdersFilteredByOrdered = async () => {
   try {
-    return await api.get(`/api/cart/get-by-status?status=orderedAt`)
+    const response = await api.get(`/api/cart/get-by-status?status=orderedAt`)
+    return response
   } catch (e) {
+    console.log("ERROR")
     console.error(e)
   }
 }
 
-export default  getAllOrdersFilteredByOrdered();
+export default getAllOrdersFilteredByOrdered();
