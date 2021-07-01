@@ -3,6 +3,7 @@ import styles from './style';
 import { createStackNavigator } from "@react-navigation/stack";
 import OrdersScreen from "../../container/screens/orders";
 import OrderDetailScreen from "../../container/screens/orderDetail";
+import ItemOrder from "../../container/components/ItemOrder";
 
 const OrderStack = createStackNavigator();
 

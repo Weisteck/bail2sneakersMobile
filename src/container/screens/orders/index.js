@@ -10,13 +10,9 @@ const OrdersScreen = ({ navigation }) => {
   return (
     <View style={styles.main}>
       <Text>Page des commandes !!</Text>
-      <Button
-        title='DETAIL COMMANDE'
-        onPress={()=> navigation.navigate('OrderDetail')}
-      />
       <FlatList
         data={carts}
-        renderItem={({item}) => <ItemOrder item={item} /> }
+        renderItem={({item}) => <ItemOrder item={item} navigation={navigation}/> }
         keyExtractor={ item => item._id}
       />
     </View>

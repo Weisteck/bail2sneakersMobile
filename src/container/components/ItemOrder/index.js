@@ -6,10 +6,15 @@ import style from "./style";
 const ItemOrder = ({ navigation, item }) => {
   return(
     <TouchableOpacity
-      OnPress={()=> navigation.navigate('OrderDetail', item)}
+      onPress={() => {
+        console.log('click ok')
+        navigation.navigate('OrderDetail', { item })
+      }}
+
     >
       <View>
         <Text>{item._id}</Text>
+        <Text>{item.order.history.orderedAt}</Text>
       </View>
     </TouchableOpacity>
   )
