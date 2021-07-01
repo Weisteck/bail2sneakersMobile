@@ -1,11 +1,12 @@
-import getAllOrders from '../../../api/bail2sneakersDbApi';
+import getAllOrdersFilteredByOrdered from '../../../api/bail2sneakersDbApi';
 
 const initialState = {
-  carts: getAllOrders
+  carts: getAllOrdersFilteredByOrdered
 }
 
 const cartsReducer = (state = initialState, action ) => {
-  return state;
+  const data = state.carts._W.data
+  return data;
 }
 
 export default cartsReducer;

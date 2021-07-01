@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import ItemOrder from "../../components/ItemOrder";
 
 const OrdersScreen = ({ navigation }) => {
-  const carts = useSelector(state => state.carts._W.data)
+  const carts = useSelector(state => state)
   console.log(carts)
   return (
     <View style={styles.main}>
