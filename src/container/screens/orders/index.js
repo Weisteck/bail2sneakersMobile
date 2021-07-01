@@ -2,14 +2,7 @@ import React from 'react';
 import {View, Text, Button, FlatList} from 'react-native';
 import styles from './style';
 import { useSelector } from "react-redux";
-
-const Item = ({ title }) => {
-  return (
-    <View>
-      <Text>{title}</Text>
-    </View>
-  )
-}
+import ItemOrder from "../../components/ItemOrder";
 
 const OrdersScreen = ({ navigation }) => {
   const carts = useSelector(state => state.carts._W.data)
@@ -23,7 +16,7 @@ const OrdersScreen = ({ navigation }) => {
       />
       <FlatList
         data={carts}
-        renderItem={({item}) => <Item title={item._id} /> }
+        renderItem={({item}) => <ItemOrder item={item} /> }
         keyExtractor={ item => item._id}
       />
     </View>
