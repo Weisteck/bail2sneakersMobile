@@ -15,4 +15,13 @@ const getAllOrdersFilteredByOrdered = async () => {
   }
 }
 
-export default getAllOrdersFilteredByOrdered();
+export const putCartStatus = async (status) => {
+  try {
+    console.log('status:', status)
+    return await api.put(`/api/cart`, { status: status })
+  } catch (e) {
+    console.error(e)
+  }
+}
+
+export default getAllOrdersFilteredByOrdered()

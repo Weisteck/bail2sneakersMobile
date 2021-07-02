@@ -11,8 +11,7 @@ const OrdersScreen = ({ navigation }) => {
   useEffect( () => {
     async function fetchData() {
       const response = await getAllOrdersFilteredByOrdered
-      console.log("await : ", response.data)
-
+      console.log(response)
       setData(response.data)
     }
     fetchData()
