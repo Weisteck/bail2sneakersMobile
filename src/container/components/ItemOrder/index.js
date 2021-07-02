@@ -10,7 +10,6 @@ const ItemOrder = ({ navigation, item }) => {
       onPress={() => {
         navigation.navigate('OrderDetail', { item })
       }}
-
     >
       <View style={styles.view}>
         <Text>Id : {item._id}</Text>
